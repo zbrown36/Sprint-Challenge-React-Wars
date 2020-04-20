@@ -20,11 +20,13 @@ const App = () => {
   }, ["https://swapi.py4e.com/api/people/"]);
 
   return (
+    //creating multiple cards by iterating over axios request
     <div className="App">
       <h1 className="header">Star Wars Characters</h1>
       {data.map(function(item, index) {
         console.log(CharacterCard)
-        return <CharacterCard name={item.name} height={item.height} weight={item.mass} homeworld={item.homeworld} key={index} />
+        return <CharacterCard name={item.name} height={item.height} weight={item.mass} gender={item.gender} dob={item.birth_year} homeWorld={item.homeworld} key={index}  />
+        
       })}
     </div>
   );  

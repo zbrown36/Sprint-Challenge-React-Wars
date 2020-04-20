@@ -1,22 +1,26 @@
 // Write your Character component here
 import React from "react";
 import styled from "styled-components";
+import axios from "axios";
+
 
 const Card = styled.div`
 background: black;
 color: white;
-width: 700px;
+width: 500px;
 max-height: 300px;
 display: flex;
-flex: column;
+flex-direction: row;
 align-items: center;
-justidy-content: space-between;
-Margin-bottom: 20px;
+justify-content: space-between;
+padding: 20px;
+margin: 0 auto;
+border: 1px dotted grey;
 `;
 
 const Title = styled.h1`
-font-size = 30px;
-font-color = red;
+font-size = 50px;
+color = red;
 border: 1px solid white;
 padding: 5px;
 `;
@@ -24,20 +28,31 @@ const Data = styled.div`
 display:flex;
 width:100%;
 flex-direction:column;
-ali:flex-start;
+padding-bottom: 3px;
 border-radius:8px;
+justify-content:space-between;
 `;
 
 const CharacterCard = props => {
+    // let planet = 
+    // axios.get("{props.homeworld")
+    // .then(response => {
+    //     const world = response.data.results;
+    //     console.log(world);
+    // })
+        //general layout of cards 
     return (
+
         <Card>
-            <Title>Name: {props.name}</Title>
+            <Title>{props.name}</Title>
             
             <Data>
-            <h2>Race: {props.race}</h2>
+            <h2>Gender: {props.gender}</h2>
+            <h2>DOB: {props.dob}</h2>
             <h2>Height: {props.height}</h2>
             <h2>Weight: {props.weight}</h2>
-            <h2>Home World: {props.homeworld}</h2>
+            
+            
             </Data>
         </Card>
     );
